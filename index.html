@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="四人擲骰子比大小遊戲" />
+    <title>比大小</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="site-header">
+        <div>
+          <p class="eyebrow">FOUR DICE / ONE WINNER</p>
+          <h1>比大小<span class="title-mark">.</span></h1>
+        </div>
+        <div class="round-badge" aria-label="目前回合">
+          <span>回合</span>
+          <strong id="round-number">01</strong>
+        </div>
+      </header>
+
+      <section class="scoreboard" aria-labelledby="result-heading">
+        <div class="scoreboard-copy">
+          <p class="section-label">即時結果</p>
+          <h2 id="result-heading">準備開始</h2>
+          <p id="result-detail">按下擲骰，看看誰能擲出最大的點數。</p>
+        </div>
+        <button class="roll-button" id="roll-button" type="button">
+          <span class="button-die" aria-hidden="true">⚄</span>
+          <span>擲骰子</span>
+        </button>
+      </section>
+
+      <section class="dice-grid" id="dice-grid" aria-label="四顆骰子"></section>
+
+      <section class="history-section" aria-labelledby="history-heading">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">過往紀錄</p>
+            <h2 id="history-heading">每一局都算數</h2>
+          </div>
+          <button class="text-button" id="clear-button" type="button">清除紀錄</button>
+        </div>
+        <div class="history-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>局</th>
+                <th>玩家 1</th>
+                <th>玩家 2</th>
+                <th>玩家 3</th>
+                <th>玩家 4</th>
+                <th>結果</th>
+              </tr>
+            </thead>
+            <tbody id="history-body">
+              <tr class="empty-row">
+                <td colspan="6">還沒有紀錄，先來擲一局吧。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer>本機紀錄只保存在這台裝置的瀏覽器中</footer>
+    </main>
+  </body>
+</html>
